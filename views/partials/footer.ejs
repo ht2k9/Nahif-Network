@@ -1,0 +1,128 @@
+		<!-- Footer
+		============================================= -->
+		<footer id="footer" class="dark">
+
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights" class="nobg">
+
+				<div class="container clearfix">
+
+					<div class="col_half">
+						Copyrights &copy; 2014 All Rights Reserved by Canvas Inc.<br>
+						<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+					</div>
+
+					<div class="col_half col_last tright">
+						<div class="copyrights-menu copyright-links clearfix">
+							<a href="#">Home</a>/<a href="#">About Us</a>/<a href="#">Team</a>/<a href="#">Clients</a>/<a href="#">FAQs</a>/<a href="#">Contact</a>
+						</div>
+					</div>
+
+				</div>
+
+			</div><!-- #copyrights end -->
+
+		</footer><!-- #footer end -->
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script src="js/jquery.js"></script>
+	<script src="js/plugins.js"></script>
+
+	<script src="js/jquery.hotspot.js"></script>
+	<script src="js/components/rangeslider.min.js"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="js/functions.js"></script>
+
+	<script>
+		jQuery(document).ready( function() {
+			var pricingNET = 100,
+				pricingCHANNEL = 100,
+				pricingPHONE = 20,
+				elementNET = $(".range-slider-cpu"),
+				elementCHANNEL = $("#checkbox-1"),
+				elementPHONE = $("#checkbox-2");
+
+			elementNET.ionRangeSlider({
+				grid: false,
+				step: 50,
+				min: 0,
+				from: 100,
+				max: 500,
+				postfix: ' ميغا',
+				onStart: function(data){
+					pricingNET = 100;
+				}
+			});
+
+			elementNET.on( 'change', function(){
+				var val = $(this).prop('value');;
+				if(val > 100){
+					pricingNET = 100 + ((val-100) / 2 );
+				}else{
+					pricingNET = 100;
+				}
+				isIncluded();
+				calculatePrice( pricingNET, pricingCHANNEL, pricingPHONE );
+			});
+
+			elementCHANNEL.on( 'click', function(){
+				isIncluded();
+				calculatePrice( pricingNET, pricingCHANNEL, pricingPHONE );
+			});
+			
+			elementPHONE.on( 'click', function(){
+				isIncluded();
+				calculatePrice( pricingNET, pricingCHANNEL, pricingPHONE );
+			});
+
+			isIncluded();
+			calculatePrice( 100, pricingCHANNEL, pricingPHONE );
+
+			function isIncluded(){
+				var includeCHANNEL = document.getElementById("checkbox-1");
+				var includePHONE = document.getElementById("checkbox-2");
+				if(includeCHANNEL != null){
+					if(includeCHANNEL.checked){ pricingCHANNEL = 100;} else { pricingCHANNEL = 0;}
+					if(includePHONE.checked){ pricingPHONE = 20;} else { pricingPHONE = 0;}
+				}else{
+					pricingCHANNEL = 0;
+					pricingPHONE = 0;
+				}
+			}
+
+			function calculatePrice( net, channel, phone ) {
+
+				var pricingValue = 100;
+				if(Number(net) > 0){
+					pricingValue = ( Number(net)) + ( Number(channel) / 2 ) + ( Number(phone) * 0 );
+
+				}else{
+					pricingValue = ( Number(net)) + ( Number(channel)) + ( Number(phone) );
+				}
+
+				jQuery('.cpu-value').html(pricingNET);
+				jQuery('.cpu-price').html(pricingNET + '<i class="icon-shekel-sign t300" style="font-size: 25px;"></i>');
+				jQuery('.ram-price').html(pricingCHANNEL + '<i class="icon-shekel-sign t300" style="font-size: 25px;"></i>');
+				jQuery('.storage-price').html(pricingPHONE + '<i class="icon-shekel-sign t300" style="font-size: 25px;"></i>');
+				jQuery('.pricing-price').html(pricingValue +  '<i class="icon-shekel-sign t300" style="font-size: 40px;"></i>');
+			}
+		});
+
+
+		jQuery(window).on( 'load', function(){
+			$('#hotspot-img').hotSpot();
+		});
+	</script>
+
+</body>
+</html>
