@@ -22,6 +22,8 @@
 			<div class="content-wrap">
 
 				<div class="container clearfix">
+				
+					<% include modal_register %>
 
 					<div class="col_one_third">
 						<div class="feature-box fbox-center fbox-outline fbox-effect nobottomborder">
@@ -77,16 +79,19 @@
 								<h2 style="font-size: 42px;">أكثر من 200 قناة بأعلى دقة ممكنة</h2>
 								<span class="d-none d-lg-block">اشتراك رسمي, دقة 1080 FULL HD, مباشر بدون تقطيع.</span>
 							</div>
-							<a href="#" class="button button-border button-rounded button-white button-light button-large noleftmargin nobottommargin" style="margin-top: 40px;">لائحة القنوات</a>
+							<a href="images/services/all_channels.jpg"
+								data-lightbox="gallery-item"
+								class="button button-border button-rounded button-white button-light button-large noleftmargin nobottommargin"
+								style="margin-top: 40px;">
+								لائحة القنوات
+							</a>
 						</div>
 					</div>
 
 					<div class="video-wrap" style="z-index: 1;">
-						<video poster="images/videos/explore.jpg" preload="auto" loop autoplay muted>
-							<source src='images/videos/explore.mp4' type='video/mp4' />
-							<source src='images/videos/explore.webm' type='video/webm' />
+						<video poster="images/services/all_channels.jpg" preload="auto">
 						</video>
-						<div class="video-overlay" style="background-color: rgba(0,0,0,0.1);"></div>
+						<div class="video-overlay" style="background-color: rgba(0,0,0,0.7);"></div>
 					</div>
 
 				</div>
@@ -119,7 +124,7 @@
 								<span class="price-unit"></span>100<span class="price-tenure">شهريا</span>
 							</div>
 							<div class="pricing-action">
-								<a href="#" class="button button-3d button-large btn-block nomargin">أطلب الان</a>
+								<a href="#" class="button button-3d button-large btn-block nomargin" data-toggle="modal" data-target="#registerModal">أطلب الان</a>
 							</div>
 						</div>
 
@@ -127,7 +132,7 @@
 
 				</div>
 
-				<a href="#" class="button button-full center tright topmargin footer-stick">
+				<a href="#" class="button button-full center tright topmargin footer-stick" data-toggle="modal" data-target="#registerModal">
 					<div class="container clearfix">
 						تريد مساعدة بالتسجيل؟ <strong>ابدأ هنا</strong> <i class="icon-caret-right" style="top:4px;"></i>
 					</div>

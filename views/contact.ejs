@@ -4,7 +4,7 @@
 		<section id="page-title">
 
 			<div class="container clearfix">
-				<h1>تواصل معنا</h1>
+				<h1> معلومات الاتصال</h1>
 				<span>متمركزين في نحف - شمال اسرائيل</span>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="#">رئيسية</a></li>
@@ -22,7 +22,7 @@
 
 				<div class="container clearfix">
 
-					<div class="menu-title">معلومات <span>الاتصال</span></div>
+					<div class="menu-title">تواصل <span>معنا</span></div>
 
 					<div id="page-submenu-trigger"><i class="icon-reorder"></i></div>
 
@@ -32,84 +32,122 @@
 
 		</div><!-- #page-menu end -->
 
-		<!-- Contact Form & Map Overlay Section
+		<!-- Content
 		============================================= -->
-		<section id="map-overlay">
+		<section id="content">
 
-			<div class="container clearfix">
+			<div class="content-wrap">
 
-				<!-- Contact Form Overlay
-				============================================= -->
-				<div id="contact-form-overlay-mini" class="clearfix">
+				<div class="container clearfix">
 
-					<div class="fancy-title title-dotted-border">
-						<h3>اكتب رسالة</h3>
-					</div>
+					<!-- Contact Form
+					============================================= -->
+					<div class="col_half">
 
-					<div class="form-widget">
+						<div class="fancy-title title-dotted-border">
+							<h3>ابعث برسالة</h3>
+						</div>
 
-						<div class="form-result"></div>
+						<div>
 
-						<!-- Contact Form
-						============================================= -->
-						<form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/form.php" method="post">
+							<form class="nobottommargin" id="template-contactform" name="template-contactform" action="/register" method="post">
 
-							<div class="col_full">
-								<label for="template-contactform-name">الاسم <small>*</small></label>
-								<input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" />
-							</div>
+								<div class="form-process"></div>
 
-							<div class="col_full">
-								<label for="template-contactform-email">الايميل <small>*</small></label>
-								<input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" />
-							</div>
+								<div class="col_full">
+								<label for="template-contactform-name">الاسم الكامل <small>*</small></label>
+								<input type="text" id="template-contactform-name" name="name" value="" class="sm-form-control required" />
+								</div>
+								<div class="clear"></div>
 
-							<div class="clear"></div>
+								<div class="col_two_third">
+								<label for="template-contactform-phone">الهاتف <small>*</small></label>
+								<input type="text" id="template-contactform-phone" name="phone" value="" class="sm-form-control" />
+								</div>
 
-							<div class="col_full">
-								<label for="template-contactform-phone">الهاتف</label>
-								<input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="sm-form-control" />
-							</div>
-
-							<div class="col_full">
-								<label for="template-contactform-service">نوع الخدمة</label>
-								<select id="template-contactform-service" name="template-contactform-service" class="sm-form-control">
+								<div class="col_one_third col_last">
+									<label for="template-contactform-service">نوع الخدمة</label>
+									<select id="template-contactform-service" name="service" class="sm-form-control">
 									<option value="">-- اختر واحدة --</option>
 									<option value="internet">انترنت</option>
 									<option value="telephone">خط هاتف</option>
 									<option value="channel">محطات انترنت</option>
-								</select>
+									</select>
+								</div>
+
+								<div class="clear"></div>
+
+								<div class="col_full">
+									<label for="message">الرسالة</label>
+									<textarea class="sm-form-control" id="message" name="template-contactform-message" rows="6" cols="30"></textarea>
+								</div>
+
+								<div class="col_full">
+									<button name="submit" type="submit" id="submit-button" tabindex="5" value="Submit" class="button button-3d nomargin">ارسل</button>
+								</div>
+
+								<input type="hidden" name="prefix" value="template-contactform-">
+
+							</form>
+						</div>
+
+					</div><!-- Contact Form End -->
+
+					<!-- Google Map
+					============================================= -->
+					<div class="col_half col_last">
+
+						<section id="google-map1" class="gmap" style="height: 410px;"></section>
+
+					</div><!-- Google Map End -->
+
+					<div class="clear"></div>
+
+					<!-- Contact Info
+					============================================= -->
+					<div class="row clear-bottommargin">
+
+						<div class="col-lg-3 col-md-6 bottommargin clearfix">
+							<div class="feature-box fbox-center fbox-bg fbox-plain">
+								<div class="fbox-icon">
+									<a href="#"><i class="icon-map-marker2"></i></a>
+								</div>
+								<h3>مركزنا في<span class="subtitle">نحف, الشمال</span></h3>
 							</div>
+						</div>
 
-							<div class="clear"></div>
-
-							<div class="col_full">
-								<label for="template-contactform-message">الرسالة <small>*</small></label>
-								<textarea class="required sm-form-control" id="template-contactform-message" name="template-contactform-message" rows="6" cols="30"></textarea>
+						<div class="col-lg-3 col-md-6 bottommargin clearfix">
+							<div class="feature-box fbox-center fbox-bg fbox-plain">
+								<div class="fbox-icon">
+									<a href="tel:0549455600"><i class="icon-phone3"></i></a>
+								</div>
+								<h3>اتصل بنا عبر<span class="subtitle">054-945-5600</span></h3>
 							</div>
+						</div>
 
-							<div class="col_full hidden">
-								<input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
+						<div class="col-lg-3 col-md-6 bottommargin clearfix">
+							<div class="feature-box fbox-center fbox-bg fbox-plain">
+								<div class="fbox-icon">
+									<a href="#"><i class="icon-email2"></i></a>
+								</div>
+								<h3>البريد الالكتروني<span class="subtitle">contact@nahif.network</span></h3>
 							</div>
+						</div>
 
-							<div class="col_full">
-								<button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">ارسال</button>
+						<div class="col-lg-3 col-md-6 bottommargin clearfix">
+							<div class="feature-box fbox-center fbox-bg fbox-plain">
+								<div class="fbox-icon">
+									<a href="https://www.facebook.com/mbc.sat.comunication/"><i class="icon-facebook2"></i></a>
+								</div>
+								<h3>تابعنا على الفيسبوك<span class="subtitle">1k لايك</span></h3>
 							</div>
+						</div>
 
-							<input type="hidden" name="prefix" value="template-contactform-">
+					</div><!-- Contact Info End -->
 
-						</form>
-
-					</div>
-
-
-				</div><!-- Contact Form Overlay End -->
+				</div>
 
 			</div>
 
-			<!-- Google Map
-			============================================= -->
-			<section id="google-map" class="gmap"></section>
-
-		</section><!-- Contact Form & Map Overlay Section End -->
-<% include partials/footer %>
+		</section><!-- #content end -->
+<% include partials/footer2 %>
