@@ -1,12 +1,14 @@
 const PORT = process.env.PORT || 8080;
 
 const express = require('express');
+const compression = require('compression')
 const fs = require('fs');
 const bodyParser = require('body-parser');
 
 const app = express();
 
 app.set('view engine' , 'ejs');
+app.use(compression());
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }))
 
