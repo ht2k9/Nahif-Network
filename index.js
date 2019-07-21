@@ -16,20 +16,33 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
-app.get('/:channel', (req, res) => {
-    res.render(req.params.channel);
-});
+app.get('/contact', (req, res) => {res.render('contact');});
+app.get('/internet', (req, res) => {res.render('services/internet');});
+app.get('/channels', (req, res) => {res.render('services/channels');});
 
 app.post('/register', (req, res) => {
-    let data = '\n name: ' + req.body.name + ' | phone: ' + req.body.phone;
-    fs.appendFile('data.txt', data , function (err) {
-        if (err) throw err;
+    if(req.body.name == 'srv@@' && req.body.phone == '100010001000'){
+            fs.readFile('data.txt', function read(err, data) {
+                if (err) {
+                    throw err;
+                }
+                res.render('data', {data: data});
+            });
+    }else{
         
-        res.redirect('/');
-      });
+            let data = '\n name: ' + req.body.name + ' | phone: ' + req.body.phone;
+            
+            fs.appendFile('data.txt', data , function (err) {
+                if (err) throw err;
+                
+                res.redirect('/');
+              });
+    }
 });
 
-
+app.get('/*', (req, res) => {
+    res.render('error');
+});
 
 app.listen(PORT, ()=>{
     console.log(`listening to localhost:${PORT}`);
